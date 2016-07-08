@@ -52,7 +52,7 @@ apt-get install -y lamp-server^
 
 echo "##  Downloading snipeit and extract to web directory."
 wget -P $tmp/ https://github.com/snipe/snipe-it/archive/master.zip >> /var/log/snipeit-install.log 2>&1 
-unzip -qo $tmp/$file -d $tmp/
+unzip -qo $tmp/master.zip -d $tmp/
 cp -R $tmp/snipe-it-master $webdir/$name
 
 apache2ctl restart
