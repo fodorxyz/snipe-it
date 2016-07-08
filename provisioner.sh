@@ -5,6 +5,7 @@ set -x
 
 ### Variables ###
 
+hosts="/etc/hosts"
 name="snipeit"
 fqdn=$DOMAIN
 hostname=$fqdn
