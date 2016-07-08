@@ -150,5 +150,7 @@ EOF
 
 chmod a+x /tmp/app-install
 
+/tmp/app-install
+
 echo "##  Restarting apache."
 service apache2 restart
