@@ -120,7 +120,17 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 cd $webdir/$name/
 composer install --no-dev --prefer-source
-php artisan app:install --env=production
+
+# This will break if different questions are asked, or they're asked in a different order
+# Currently it is: https://github.com/snipe/snipe-it/blob/master/app/commands/AppCommand.php#L67
+#$this->askUserFirstName();
+#$this->askUserLastName();
+#$this->askUserUsername();
+#$this->askUserEmail();
+#$this->askUserPassword();
+#$this->askUserDummyData();
+
+echo "${FIRST_NAME}\n${LAST_NAME}\n${USERNAME}\n${EMAIL}\n${PASSWORD}\nn\n" | php artisan app:install --env=production
 
 echo "##  Restarting apache."
 service apache2 restart
