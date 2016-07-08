@@ -14,6 +14,8 @@ mysqluserpw=$RANDOM_PASSWORD
 random32="$(echo `< /dev/urandom tr -dc _A-Za-z-0-9 | head -c32`)" # Snipe says we need a new 32bit key, so let's create one randomly and inject it into the file
 apachefile=/etc/apache2/sites-available/$name.conf
 webdir=/var/www
+tmp=/tmp/$name
+
 
 echo >> $dbsetup "CREATE DATABASE snipeit;"
 echo >> $dbsetup "GRANT ALL PRIVILEGES ON snipeit.* TO snipeit@localhost IDENTIFIED BY '$mysqluserpw';"
@@ -49,7 +51,7 @@ apt-get install -y lamp-server^
 
 
 echo "##  Downloading snipeit and extract to web directory."
-wget -P $tmp/ https://github.com/snipe/snipe-it/archive/$file >> /var/log/snipeit-install.log 2>&1 
+wget -P $tmp/ https://github.com/snipe/snipe-it/archive/master.zip >> /var/log/snipeit-install.log 2>&1 
 unzip -qo $tmp/$file -d $tmp/
 cp -R $tmp/snipe-it-master $webdir/$name
 
