@@ -12,7 +12,7 @@
 		},
 		{
 			"title": "Project's website",
-			"url": "http://snipeitapp.com"
+			"url": "https://snipeitapp.com"
 		}
 	],
 	"size": {
@@ -51,7 +51,7 @@
 		{
 			"title": "Password",
 			"name": "password",
-			"notes": "This is for your Snipe-It user",
+			"notes": "This is for your Snipe-It user, it must be more than 8 characters long",
 			"type": "password"
 		}
 	]
