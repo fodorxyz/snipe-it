@@ -47,8 +47,11 @@ echo "##  Installing packages."
 echo "##  Setting up LAMP."
 apt-get install -y lamp-server^
 
-# copy git repo into $webdir/$name
-cp -R . $webdir/$name
+
+echo "##  Downloading snipeit and extract to web directory."
+wget -P $tmp/ https://github.com/snipe/snipe-it/archive/$file >> /var/log/snipeit-install.log 2>&1 
+unzip -qo $tmp/$file -d $tmp/
+cp -R $tmp/snipe-it-master $webdir/$name
 
 apache2ctl restart
 
