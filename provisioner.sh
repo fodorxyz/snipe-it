@@ -37,7 +37,7 @@ debconf-set-selections <<< "mysql-server mysql-server/root_password password ${R
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password ${ROOT_MYSQL_PASSWORD}"
 
 apt-get -y update
-apt-get install -y git unzip php5 php5-mcrypt php5-curl php5-mysql php5-gd php5-ldap mysql-server
+apt-get install -y git unzip php5 php5-mcrypt php5-curl php5-mysql php5-gd php5-ldap mysql-server expect
 
 #Enable mcrypt and rewrite
 echo "##  Enabling mcrypt and rewrite"
@@ -130,7 +130,25 @@ composer install --no-dev --prefer-dist
 #$this->askUserPassword();
 #$this->askUserDummyData();
 
-printf "${FIRST_NAME}\n${LAST_NAME}\n${USERNAME}\n${EMAIL}\n${PASSWORD}\nn\n" | php artisan app:install --env=production
+cat << EOF > /tmp/app-install
+#!/usr/bin/expect
+
+set timeout 20
+
+spawn "php artisan app:install --env=production"
+
+expect "First name:" { send "${FIRST_NAME}\r" }
+expect "Last name:" { send "${LAST_NAME}\r" }
+expect "Username:" { send "${USERNAME}\r" }
+expect "Email:" { send "${EMAIL}\r" }
+expect "at least 8 characters):" { send "${PASSWORD}\r" }
+expect "password:" { send "${PASSWORD}\r" }
+expect "default is no):" { send "N\r" }
+
+interact
+EOF
+
+chmod a+x /tmp/app-install
 
 echo "##  Restarting apache."
 service apache2 restart
