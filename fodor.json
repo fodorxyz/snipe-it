@@ -1,0 +1,28 @@
+{
+	"name": "fodorxyz/snipe-it",
+	"installpath": "/tmp/snipe-it",
+	"provisioner": "provisioner.sh",
+	"text": {
+		"complete": "Enjoy!"
+	},
+	"links": [
+		{
+			"title": "Your Snipe-It App",
+			"url": "http://{{DOMAIN}}/"
+		},
+		{
+			"title": "Project's website",
+			"url": "http://snipeitapp.com"
+		}
+	],
+	"size": {
+		"suggested": "1gb",
+		"required": "512mb"
+	},
+	"distro": "ubuntu-14-04-x64",
+	"description": "A free open source IT asset/license management system built in PHP on Laravel 4.2 and Bootstrap 3. http://snipeitapp.com",
+	"keywords": ["fodor", "snipe-it", "snipeit"],
+	"homepage": "https://github.com/fodorxyz/snipe-it",
+	"inputs": [
+	]
+}
