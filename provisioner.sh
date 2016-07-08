@@ -119,7 +119,7 @@ echo "##  Installing and configuring composer"
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 cd $webdir/$name/
-composer install --no-dev --prefer-source
+composer install --no-dev --prefer-dist
 
 # This will break if different questions are asked, or they're asked in a different order
 # Currently it is: https://github.com/snipe/snipe-it/blob/master/app/commands/AppCommand.php#L67
