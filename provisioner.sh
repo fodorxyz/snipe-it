@@ -135,12 +135,12 @@ cat << EOF > /tmp/app-install
 
 set timeout 20
 
-spawn "php artisan app:install --env=production"
+spawn /usr/bin/php $webdir/$name/artisan app:install --env=production
 
-expect "First name:" { send "${FIRST_NAME}\r" }
-expect "Last name:" { send "${LAST_NAME}\r" }
-expect "Username:" { send "${USERNAME}\r" }
-expect "Email:" { send "${EMAIL}\r" }
+expect "first name:" { send "${FIRST_NAME}\r" }
+expect "last name:" { send "${LAST_NAME}\r" }
+expect "username:" { send "${USERNAME}\r" }
+expect "email:" { send "${EMAIL}\r" }
 expect "at least 8 characters):" { send "${PASSWORD}\r" }
 expect "password:" { send "${PASSWORD}\r" }
 expect "default is no):" { send "N\r" }
