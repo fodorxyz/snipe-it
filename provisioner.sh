@@ -130,7 +130,7 @@ composer install --no-dev --prefer-dist
 #$this->askUserPassword();
 #$this->askUserDummyData();
 
-echo "${FIRST_NAME}\n${LAST_NAME}\n${USERNAME}\n${EMAIL}\n${PASSWORD}\nn\n" | php artisan app:install --env=production
+printf "${FIRST_NAME}\n${LAST_NAME}\n${USERNAME}\n${EMAIL}\n${PASSWORD}\nn\n" | php artisan app:install --env=production
 
 echo "##  Restarting apache."
 service apache2 restart
