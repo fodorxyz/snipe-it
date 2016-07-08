@@ -24,5 +24,35 @@
 	"keywords": ["fodor", "snipe-it", "snipeit"],
 	"homepage": "https://github.com/fodorxyz/snipe-it",
 	"inputs": [
+		{
+			"title": "First Name",
+		        "name": "first_name",
+		        "notes": "Can't be empty",
+		        "type": "string"
+		},
+		{
+			"title": "Last Name",
+		        "name": "last_name",
+		        "notes": "Can't be empty",
+		        "type": "string"
+		},
+		{
+			"title": "Username",
+			"name": "username",
+			"notes": "This is for your Snipe-It user",
+			"type": "string"
+		},
+		{
+			"title": "Email",
+			"name": "email",
+			"notes": "This is for your Snipe-It user",
+			"type": "email"
+		},
+		{
+			"title": "Password",
+			"name": "password",
+			"notes": "This is for your Snipe-It user",
+			"type": "password"
+		}
 	]
 }
