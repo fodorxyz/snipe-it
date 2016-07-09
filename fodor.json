@@ -23,6 +23,7 @@
 	"description": "A free open source IT asset/license management system built in PHP on Laravel 4.2 and Bootstrap 3. https://snipeitapp.com",
 	"keywords": ["fodor", "snipe-it", "snipeit"],
 	"homepage": "https://github.com/fodorxyz/snipe-it",
+	"image": "https://snipeitapp.com/assets/images/demo/desktop_snipe.png",
 	"inputs": [
 		{
 			"title": "First Name",
