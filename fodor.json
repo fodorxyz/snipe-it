@@ -22,7 +22,7 @@
 	"distro": "ubuntu-14-04-x64",
 	"description": "A free open source IT asset/license management system built in PHP on Laravel 4.2 and Bootstrap 3. https://snipeitapp.com",
 	"keywords": ["fodor", "snipe-it", "snipeit"],
-	"homepage": "https://github.com/fodorxyz/snipe-it",
+	"homepage": "https://snipeitapp.com/",
 	"image": "https://snipeitapp.com/assets/images/demo/desktop_snipe.png",
 	"inputs": [
 		{
