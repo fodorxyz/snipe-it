@@ -52,7 +52,8 @@
 			"title": "Password",
 			"name": "password",
 			"notes": "This is for your Snipe-It user, it must be more than 8 characters long",
-			"type": "password"
+			"type": "password",
+			"regex": ".{9,}"
 		}
 	]
 }
